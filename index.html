@@ -4,156 +4,194 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mohamed Adel | Cyber Security</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 body{
-    font-family: Arial, sans-serif;
-    margin:0;
-    background:#0f172a;
-    color:white;
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#05070d;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* Glow Background */
+body::before{
+  content:"";
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:radial-gradient(circle at 20% 30%, #00f0ff22, transparent),
+             radial-gradient(circle at 80% 70%, #ff00ff22, transparent);
+  z-index:-1;
 }
 
 header{
-    text-align:center;
-    padding:60px 20px;
-    background:#020617;
+  text-align:center;
+  padding:100px 20px;
 }
 
-header img{
-    width:150px;
-    height:150px;
-    border-radius:50%;
-    object-fit:cover;
-    margin-bottom:20px;
-    border:3px solid #38bdf8;
-    transition: transform 0.3s ease;
+header h1{
+  font-family:'Orbitron',sans-serif;
+  font-size:45px;
 }
 
-header img:hover{
-    transform: scale(1.05);
+.typing{
+  border-right:2px solid #00f0ff;
+  white-space:nowrap;
+  overflow:hidden;
+  width:0;
+  animation:typing 3s steps(30,end) forwards, blink 0.7s infinite;
 }
 
-h1{
-    font-size:40px;
-    margin:10px 0;
+@keyframes typing{
+  to{width:100%;}
+}
+
+@keyframes blink{
+  50%{border-color:transparent;}
+}
+
+.btn{
+  display:inline-block;
+  margin:10px;
+  padding:12px 25px;
+  background:#00f0ff;
+  color:black;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.btn:hover{
+  box-shadow:0 0 20px #00f0ff;
+}
+
+section{
+  padding:50px 20px;
+  max-width:1000px;
+  margin:auto;
 }
 
 h2{
-    color:#38bdf8;
-    margin-bottom:10px;
+  font-family:'Orbitron';
+  border-left:4px solid #00f0ff;
+  padding-left:10px;
 }
 
-.container{
-    max-width:1000px;
-    margin:auto;
-    padding:40px 20px;
+.skills, .projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
 }
 
 .card{
-    background:#020617;
-    padding:25px;
-    margin:20px 0;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.4);
+  background:#0d1325;
+  padding:20px;
+  border-radius:20px;
+  transition:0.4s;
 }
 
-a{
-    color:#38bdf8;
-    text-decoration:none;
+.card:hover{
+  transform:translateY(-10px) scale(1.02);
+  box-shadow:0 0 25px #00f0ff55;
 }
 
-.skills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
+.social{
+  margin-top:20px;
 }
 
-.skill{
-    background:#1e293b;
-    padding:8px 14px;
-    border-radius:6px;
-    font-size:14px;
+.social a{
+  margin:0 10px;
+  color:#00f0ff;
+  text-decoration:none;
 }
 
 footer{
-    text-align:center;
-    padding:30px;
-    background:#020617;
-    margin-top:40px;
+  text-align:center;
+  padding:20px;
+  color:#777;
 }
-</style>
 
+</style>
 </head>
 
 <body>
 
 <header>
+  <h1>Mohamed Adel</h1>
+  <p class="typing">Cyber Security | Penetration Tester</p>
+  <p>I break systems to make them secure 🔐</p>
 
-<!-- صورة شخصية -->
-<img src="your-photo.jpg" alt="Mohamed Adel Photo">
+  <a class="btn" href="#">Contact Me</a>
+  <a class="btn" href="#">Download CV</a>
 
-<h1>Mohamed Adel Mahmoud</h1>
-
-<p>Cyber Security Student | Penetration Testing Enthusiast</p>
-
-<p>
-📞 01090043011 |
-📧 mohamedghitas535@gmail.com
-</p>
-
-<p>
-<a href="https://www.linkedin.com/in/mohamed-adel-655232348">LinkedIn</a>
-</p>
-
+  <div class="social">
+    <a href="#">GitHub</a>
+    <a href="#">LinkedIn</a>
+  </div>
 </header>
 
-<div class="container">
+<section>
+  <h2>About Me</h2>
+  <p>
+    Cyber Security Student | Penetration Tester (Junior)
+    <br><br>
+    I specialize in Web Security, Bug Hunting, and Vulnerability Assessment.
+    Experienced in tools like Burp Suite, Nmap, and Wireshark.
+    <br><br>
+    I enjoy breaking systems to understand how they work and securing them after.
+  </p>
+</section>
 
-<div class="card">
-<h2>About Me</h2>
-<p>
-Cybersecurity student at Arab Open University with a strong interest in penetration testing, network security, and vulnerability assessment. I enjoy working with security tools and solving real-world security challenges through hands-on labs.
-</p>
-</div>
+<section>
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="card">
+      <h3>Security</h3>
+      <p>Web Penetration Testing<br>Bug Hunting<br>OWASP Top 10</p>
+    </div>
 
-<div class="card">
-<h2>Education</h2>
-<p>
-Arab Open University<br>
-Cyber Security<br>
-2023 – 2027
-</p>
-</div>
+    <div class="card">
+      <h3>Tools</h3>
+      <p>Burp Suite<br>Nmap<br>Wireshark<br>Metasploit<br>Nikto</p>
+    </div>
 
-<div class="card">
-<h2>Skills</h2>
-<div class="skills">
-<div class="skill">Linux</div>
-<div class="skill">Kali Linux</div>
-<div class="skill">Nmap</div>
-<div class="skill">Wireshark</div>
-<div class="skill">Burp Suite</div>
-<div class="skill">Metasploit</div>
-<div class="skill">Networking</div>
-<div class="skill">VirtualBox</div>
-<div class="skill">VMware</div>
-<div class="skill">Python</div>
-</div>
-</div>
+    <div class="card">
+      <h3>Programming</h3>
+      <p>HTML<br>CSS<br>JavaScript<br>Python</p>
+    </div>
 
-<div class="card">
-<h2>Projects</h2>
-<p>
-• Built personal penetration testing lab using Kali Linux and vulnerable machines.<br><br>
-• Performed network scanning and enumeration using Nmap.<br><br>
-• Practiced web vulnerabilities like SQL Injection and XSS in security labs.
-</p>
-</div>
+    <div class="card">
+      <h3>Other</h3>
+      <p>Linux (Kali)<br>Networking (CCNA Basics)</p>
+    </div>
+  </div>
+</section>
 
-</div>
+<section>
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="card">
+      <h3>XSS Lab</h3>
+      <p>Discovered and exploited XSS vulnerabilities using Burp Suite</p>
+    </div>
+
+    <div class="card">
+      <h3>Brute Force Attack</h3>
+      <p>Performed brute force attacks using Burp Intruder</p>
+    </div>
+
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>Designed and developed using HTML & CSS</p>
+    </div>
+  </div>
+</section>
 
 <footer>
-<p>© 2026 Mohamed Adel | Cyber Security Portfolio</p>
+  <p>© 2026 Mohamed Adel | Cyber Security</p>
 </footer>
 
 </body>
